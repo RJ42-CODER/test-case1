@@ -11,7 +11,10 @@ jobs:
      - uses: actions/checkout@v4
 
      - name: Install Dependencies
-       run: pip install pytest
+       run: pip install pytest pylint
 
      - name: Run Tests
        run: pytest
+
+     - name : Run Pylint
+       run: pylint calculator.py || true
